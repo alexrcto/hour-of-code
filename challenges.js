@@ -3,13 +3,13 @@
 const challenges = [
   {
     number: 1,
-    name: "#1 Welcome to 'Hour of Code'!",
+    name: "#1 Bienvenido a 'Hour of Code'!",
     instructions: [
-      "In this adventure, we will be playing with an animal using code!",
-      "Choose your animal, and your color.",
+      "En esta aventura, ¡jugaremos con un animal mediante código!",
+      "Escoge tu animal, y un color.",
       "<div class='animal-container'><div class='monkey'><span>Monkey</span> <img class='animal' src='assets/monkey.svg' alt='monkey'></div><div class='horse'><span>Horse</span> <img class='animal' src='assets/horse.svg' alt='horse'></div><div class='tiger'><span>Tiger</span> <img class='animal' src='assets/tiger.svg' alt='tiger'></div></div>",
       "<div class='color-container'><div class='red'>Red</div><div class='green'>Green</div><div class='blue'>Blue</div></div>",
-      "Create your animal below by changing <span class='inline-code'>animal</span> and <span class='inline-code'>color</span> to your selection, leaving the quotes."
+      "Crea un animal debajo cambiando <span class='inline-code'>animal</span> y <span class='inline-code'>color</span> a los que quieras, dejando las comillas."
     ],
     seed: {
       code: [
@@ -33,11 +33,11 @@ const challenges = [
     tests: [
       {
         test: "$('#preview').contents().find('#img-cont')[0].src.match(/monkey.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/horse.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/tiger.svg/ig)",
-        message: "Did you change animal to either monkey, horse or tiger?\nCheck that you don't have extra spaces."
+        message: "¿Cambiaste el animal a 'monkey', 'horse' o 'tiger'?\n Verifica que no tienes espacios adicionales."
       },
       {
         test: "$('#preview').contents().find('body')[0].className === 'red' || $('#preview').contents().find('body')[0].className === 'green' || $('body').className === 'green' || $('#preview').contents().find('body')[0].className === 'blue'",
-        message: "Did you change color to either red, green or blue?"
+        message: "¿Cambiaste el color a 'red', 'green' o 'blue'?"
       }
     ],
     callbacks: [
@@ -47,11 +47,11 @@ const challenges = [
   },
   {
     number: 2,
-    name: "#2 Making Friends",
+    name: "#2 Haciendo amigos",
     instructions: [
-      () => `Your ${animal} must be a bit lonely here! You can create more ${animal}s quickly by running a loop. This loop makes 5 animals.`,
+      () => `¡Tu animal debe sentirse un poco solo! Puedes crear más animales rápidamente con un ciclo. Este ciclo hace 5 animales.`,
       "<pre class='codeblock'>var num = 1;\n\nwhile (num <= 5) {\n\n   createAnimal('animal');\n\n}</pre>",
-      "Try playing around with <span class='inline-code'>num = 1</span> and <span class='inline-code'>(num <= 1)</span>!"
+      "Intenta jugar con <span class='inline-code'>num = 1</span> y <span class='inline-code'>(num <= 1)</span>!"
     ],
     seed: {
       code: [
@@ -78,20 +78,20 @@ const challenges = [
     },
     tests: [{
       test: "$('#preview').contents().find('img').length > 1",
-      message: "It looks like your animal is still alone.\nDid you try modifying the number next to the while loop?"
+      message: "Parece que tu animal sigue un poco solo.\n¿Intentaste modificar el número cerca del ciclo while?"
     }],
     callbacks: []
   },
   {
     number: 3,
-    name: "#3 Names for Everyone",
+    name: "#3 Nombres para Todos",
     instructions: [
-      () => `You know, it's a bit boring calling this guy "${animal}".\nWe wouldn't be able to tell who was who in that last challenge.`,
-      "How about we give him a <i>name</i> ? We can create variables that hold information like this:",
+      () => `Sabes que, es un poco raro seguirle llamando animal.\nNo sabíamos quién era quien en ese último reto.`,
+      "¿Qué tal si le damos un nombre <i>nombre</i> ? Podemos crear variables para guardar información de la siguiente manera:",
       `<pre class='codeblock'>
       var name = "value";</pre>`,
-      "Now whenever we access <span class='inline-code'>name</span> we get <span class='inline-code'>\"value\"</span>.",
-      () => `When we want to change the name we change what's inside the quotes. Let's try and name two ${animal}s.`
+      "Ahora cuando accedamos a <span class='inline-code'>name</span> obtenemos <span class='inline-code'>\"value\"</span>.",
+      () => `Cuando queremos cambiar el nombre cambiamos lo que está entre las comillas. Vamos a tratar de nombrar nuestros animales.`
     ],
     seed: {
       code: [
@@ -100,8 +100,8 @@ const challenges = [
           <div><p id="name1"></p><img src="assets/${animal}.svg"></div>
           <div><p id="name2"></p><img src="assets/${animal}.svg"></div>`,
         `<script>`,
-        `// Remember to keep the quotes so we know its a word.
-// Just add your names between them.
+        `// Recuerda mantener las comillas para saber que es una palabra
+// Sólo tienes que agregar los nombres
 `,
         `var name1 = "";`,
         `var name2 = "";`,
@@ -120,13 +120,13 @@ const challenges = [
     },
     tests: [{
       test: "(typeof iFrame.name1 === 'string') && (typeof iFrame.name2 === 'string')",
-      message: "Did you add quotation marks around your values?"
+      message: "¿Agregaste comillas alrededor de tus variables?"
     }, {
       test: "($('#preview').contents().find('#name1')[0].textContent.length > 0) && ($('#preview').contents().find('#name2')[0].textContent.length > 0)",
-      message: "Are you sure both of the animals have names?"
+      message: "¿Estás seguro de que ambos animales tienen nombres?"
     }, {
       test: "$('#preview').contents().find('#name1')[0].textContent !== $('#preview').contents().find('#name2')[0].textContent",
-      message: "Make sure their names are unique (different from each other)."
+      message: "Asegúrate de que sus nombres son distintos."
     }],
     callbacks: [
       () => { name1 = iFrame.name1; },
@@ -135,15 +135,15 @@ const challenges = [
   },
   {
     number: 4,
-    name: "#4 It's ALIVE!",
+    name: "#4 ¡Está VIVO!",
     instructions: [
-      "I bet they're getting restless by now. Let's shake things up!",
-      () => `To select a ${animal}: <span class='inline-code'>document.getElementById("name")</span>`,
-      `To make it move, append <span class="inline-code">.animate("animation");</span>`,
-      `Replace <span class="inline-code">animation</span> with which animation you want.`,
-      `Here's a list of animations that work:`,
+      "Seguro están un poco ansiosos. ¡Vamos a mover un poco las cosas!",
+      () => `Para seleccionar un animal: <span class='inline-code'>document.getElementById("name")</span>`,
+      `Para hacerlo moverse, añade <span class="inline-code">.animate("animation");</span>`,
+      `Sustituye <span class="inline-code">animation</span> con la animación que quieras.`,
+      `Aquí hay una lista de animaciones que puedes usar:`,
       `<span class="inline-code">bounce flash pulse rubberBand shake headShake swing tada wobble jello</span>`,
-      () => `Try to get both <b>${name1}</b> and <b>${name2}</b> moving!`
+      () => `¡Intenta hacer que tanto <b>${name1}</b> como <b>${name2}</b> se muevan!`
     ],
     seed: {
       code: [
@@ -153,9 +153,9 @@ const challenges = [
             Element.prototype.animate = function(k) {
 this.className += k.toLowerCase().trim();
 }`,
-          "// Remember to change NAME.",
-          "// You can write out the name or use the",
-          "// variables name1 and name2 (& delete the quotes).",
+          "// Recuerda cambiar NAME.",
+          "// Puedes escribir el nombre o usar",
+          "// las variables name1 and name2 (y borrar las comillas).",
           "",
           `document.getElementById("NAME").animate("ANIMATION");`,
           `document.getElementById("NAME").animate("ANIMATION");`,
@@ -177,13 +177,13 @@ this.className += k.toLowerCase().trim();
     },
     tests: [{
       test: () => $('#preview').contents().find(`#${name1}`)[0].className.match(/animated infinite (\w+)/) && $('#preview').contents().find(`#${name2}`)[0].className.match(/animated infinite (\w+)/),
-      message: `Did you give change NAME properly?`
+      message: `¿Cambiaste NAME adecuadamente?`
     }, {
       test: () => $('#preview').contents().find(`#${name1}`)[0].className.match(/animated infinite (\w+)/)
       && $('#preview').contents().find(`#${name2}`)[0].className.match(/animated infinite (\w+)/)
       && animationList.includes($(`#preview`).contents().find(`#${name1}`)[0].className.match(/animated infinite (\w+)/)[1].toLowerCase().trim())
       && animationList.includes($(`#preview`).contents().find(`#${name2}`)[0].className.match(/animated infinite (\w+)/)[1].toLowerCase().trim()),
-      message: 'Did you use the listed animations?'
+      message: '¿Usaste una de las animaciones en la lista?'
     }],
     callbacks: [
       () => { ani1 = $('#preview').contents().find(`#${name1}`)[0].className; ani2 = $('#preview').contents().find(`#${name2}`)[0].className; }
@@ -191,11 +191,11 @@ this.className += k.toLowerCase().trim();
   },
   {
     number: 5,
-    name: "#5 Introducing Borders",
+    name: "#5 Introduciendo bordes",
     instructions: [
-      "Now that they're moving around, we should probably make sure they don't run away! Try changing the <span class='inline-code'>style</span>, <span class='inline-code'>size</span>, and <span class='inline-code'>color</span> of the border until you find something you like. Border styles:",
+      "Ahora que se mueven, deberíamos asegurarnos de que no huyan! Intenta cambiar el <span class='inline-code'>style</span>, <span class='inline-code'>size</span>, y <span class='inline-code'>color</span> del borde hasta que encuentres alguno que te guste. Los estilos son:",
       "<img src='http://www.vanseodesign.com/blog/wp-content/uploads/2011/10/border-styles.png' style='height: 250px;'>",
-      "TIP: <span class='inline-code'>px</span> stands for <span class='inline-code'>pixels</span> which is a measurement of width."
+      "PISTA: <span class='inline-code'>px</span> viene de <span class='inline-code'>pixels</span> una medida de ancho."
     ],
     seed: {
       code: [
@@ -213,10 +213,10 @@ this.className += k.toLowerCase().trim();
     },
     tests: [{
       test: () => ($("iframe").contents().find("body").css("border-top-style") !== "none"),
-      message: "Pick a border-style from the image that is not \"none\"."
+      message: "Escoge un border-style de la imagen que no sea \"none\"."
     }, {
       test: () => (/(\d+)px/g.exec($("iframe").contents().find("body").css("border-top-width"))) && +(/(\d+)px/g.exec($("iframe").contents().find("body").css("border-top-width"))[1]) > 0,
-      message: "Did you keep 'px' after your width number?"
+      message: "¿Dejaste 'px' después de tu ancho?"
     }],
     callbacks: [
       () => borderStyle.push($("iframe").contents().find("body").css("border-top-style"), $("iframe").contents().find("body").css("border-top-width"), $("iframe").contents().find("body").css("border-top-color"))
@@ -224,11 +224,11 @@ this.className += k.toLowerCase().trim();
   },
   {
     number: 6,
-    name: "#6 A Change of Scenery",
+    name: "#6 Un Cambio de Imagen",
     instructions: [
-      "You're probably getting tired of that background by now... How about we use a picture instead?",
+      "Probablemente ya estés cansado de ese fondo... ¿Qué tal si usamos una foto?",
       "<img src='assets/terrain.jpg' style='height: 150px;'>",
-      () => `Replace <span class='inline-code'>IMAGE</span> with a type of flooring your ${animal}s would like!`
+      () => `¡Cambia <span class='inline-code'>IMAGE</span> por un suelo que le guste a tu animal!`
     ],
     seed: {
       code: [
@@ -246,7 +246,7 @@ this.className += k.toLowerCase().trim();
         const url = $("iframe").contents().find("body").css("background-image").slice(-18).toLowerCase().trim();
         return (url === '/assets/dirt.jpg")') || (url === 'assets/grass.jpg")') || (url === 'assets/stone.jpg")');
       },
-      message: "Did you replace IMAGE with one of the three types: dirt, grass, or stone?\nRemember to use the format in the instructions: url('assets/IMAGE.jpg');"
+      message: "¿Cambiaste IMAGE por uno de los tres tipos: dirt, grass, or stone?\nRecuerda usar el formato en las instrucciones: url('assets/IMAGE.jpg');"
     }],
     callbacks: [
       () => bg = $("iframe").contents().find("body").css("background-image"),
@@ -258,9 +258,9 @@ this.className += k.toLowerCase().trim();
     name: "#7 Making Signs",
     // introduce html element, maybe just <h1></h1>, font-size, color, background-color
     instructions: [
-      "Hey, it's starting to look pretty spiffy. I think we 'ought to hang up a sign somewhere, so that people can find this place.",
-      "Let's create a header element. Whatever you type in between the <code class='inline-code'>h1</code> tags will show up as the title.",
-      "I've added a few more style settings for you to customize, so make sure to fill those in. Remember that <code class='inline-code'>px</code> is a unit of width, so you should keep that with your font-size."
+      "Mmm... esto empieza a verse bien. Creo que deberíamos colgar un cartel en algún lado, para que más gente pueda encontrar este lugar. Creo que deberíamos colgar un cartel en algún lado,para que más gente pueda encontrar este lugar.",
+      "Vamos a crear un elemento header. Cualquier cosa que escribas entre etiquetas <code class='inline-code'>h1</code> se mostrará como un título.",
+      "Hemos agregado algunos estilos más para que los cambies, así que asegúrate de llenarlos. Recuerda que <code class='inline-code'>px</code> es una unidad de medida, así que asegúrate de mantenerla junto a tu font-size."
     ],
     seed: {
       code: [
@@ -281,10 +281,10 @@ this.className += k.toLowerCase().trim();
     },
     tests: [{
       test: () => $("iframe").contents().find("h1")[0].textContent.length > 0,
-      message: "Make sure there's an actual title inbetween the h1 tags!"
+      message: "Asegúrate de haber escrito algo entre las etiquetas h1!"
     }, {
       test: () => +(/(\d+)px/g.exec($("iframe").contents().find("h1").css("font-size"))[1]) > 0,
-      message: "Did you give it a proper font-size?"
+      message: "¿Especificaste un font-size correcto?"
     }],
     callbacks: [
       () => title.push($("iframe").contents().find("h1")[0].textContent, $("iframe").contents().find("h1").css("font-size"), $("iframe").contents().find("h1").css("background-color"), $("iframe").contents().find("h1").css("color"))
@@ -292,17 +292,17 @@ this.className += k.toLowerCase().trim();
   },
   {
     number: 8,
-    name: "#8 Let's Add Knickknacks",
+    name: "#8 Agreguemos Pacotilla",
     instructions: [
-      () => `Since it's almost the holiday season I think we should decorate the place.`,
+      () => `Puesto que estamos casi en Navidad deberíamos decorar un poco el lugar.`,
       "<img src='assets/presents.jpg' style='margin: -15px 0 -10px 0; height: 300px;'>",
-      `Time to use <code class='inline-code'>img</code> tags. Just like earlier, change the code right before <code class='inline-code'>.png</code> to select your present type.
-      This time we also have to give them <code class='inline-code'>id</code>s.`
+      `Hora de usar etiquetas <code class='inline-code'>img</code>. Cambia el código justo antes de <code class='inline-code'>.png</code> para seleccionar tu regalo.
+      Esta vez también tenemos que darles <code class='inline-code'>id</code>s.`
     ],
     seed: {
       code: [
-        `<!-- No two IDs should be the same`,
-        `     Try to finish at least 2 presents! -->`,
+        `<!-- Los IDs deberían ser todos distintos`,
+        `     Intenta hacer al menos dos regalos! -->`,
         "",
           `<img src='assets/p0.png' id='present1'
                      onerror='this.src="assets/err.png"'>`,
@@ -329,7 +329,7 @@ this.className += k.toLowerCase().trim();
           return (valid >= 2);
         }
       },
-      message: "You don't seem to have at least 2 valid images. Check your src."
+      message: "No pareces tener al menos dos imágenes válidas. Verifica tu src."
     }, {
       test: () => {
         ids = [];
@@ -344,26 +344,26 @@ this.className += k.toLowerCase().trim();
                 return (valid >= 2);
             }
         },
-      message: "You need at least 2 unique id's.\nEvery present should have a different id."
+      message: "Necesitas al menos dos ids únicos.\nCada regalo debería tener un id distinto."
     }, {
       test: () => presents.length === ids.length,
-      message: "The number of presents is not the same as the number of unique IDs."
+      message: "El número de regalos no es el mismo que el número de ids únicos."
     }],
     callbacks: []
   },
   {
     number: 9,
-    name: "#9 Push 'n' Pull",
+    name: "#9 ¡Hala y empuja!",
     instructions: [
-      "It's boring having everything lumped up in the center like that. Let's reposition the decorations.",
-      `Now this is where the IDs become important. We're going to use them to move the presents around.`,
-      `You can add  <code class='inline-code'>top</code>, <code class='inline-code'>bottom</code>, <code class='inline-code'>left</code>, or <code class='inline-code'>right</code> properties.`,
-      `For example:`,
+      "Es aburrido tenerlo todo apretado así en el centro. Vamos a reubicar las decoraciones.",
+      `Aquí es donde los IDs se vuelven importantes. Vamos a usarlos para mover un poco los elementos.`,
+      `Puedes agregar las propiedades <code class='inline-code'>top</code>, <code class='inline-code'>bottom</code>, <code class='inline-code'>left</code>, o <code class='inline-code'>right</code>.`,
+      `Por ejemplo:`,
       `<pre class='codeblock'>#id {
             top: 50px;
             right: 20%;
       }</pre>
-      Remember that you can use px as units.`
+      Recuerda que puedes usar px como unidades.`
     ],
     seed: {
       code: ()  => {
@@ -449,7 +449,7 @@ this.className += k.toLowerCase().trim();
        }
        return pass;
       },
-      message: "Try moving each present box with top, bottom, left, or right."
+      message: "Intenta mover cada caja con top, bottom, left o right."
     }, ],
     callbacks: [
       () => ed = $('.CodeMirror')[0].CodeMirror.getValue()
@@ -457,12 +457,12 @@ this.className += k.toLowerCase().trim();
   },
   {
     number: 10,
-    name: "#10 The Grand Unveiling",
+    name: "#10 La Gran Revelación",
     instructions: [
-      "Look who's back! I guess the presents did work as a lure. I think we're done the remodeling, but that doesn't mean your adventure has to end here.",
-      "There are lots of resources about HTML tags and CSS styling if you found this activity fun, like at FreeCodeCamp, Codecademy, and Khan Academy.",
+      "¡Mira quiénes han vuelto! Supongo que los regalos sirvieron para atraerlos de vuelta. Creo que hemos terminado con la decoración, pero tu aventura no tiene por qué terminar aquí. ",
+      "Hay montones de recursos acerca de etiquetas HTML y estilos CSS si esto te pareció divertido. Por ejemplo, puedes visitar FreeCodeCamp, Codecademy, Khan Academy, o preguntar a tus mentores!",
       "",
-      `Feel free to play around with the editor/preview below. Just make sure to keep CSS between <code class="inline-code">style</code> tags and Javascript between <code class="inline-code">script</code> tags.`
+      `Puedes jugar un poco más con el de abajo. Sólo asegúrate de mantener el código CSS entre las etiquetas <code class="inline-code">style</code> y el Javascript entre etiquetas <code class="inline-code">script</code>.`
     ],
     seed: {
       code: [

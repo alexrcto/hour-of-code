@@ -58,10 +58,10 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
 // Get website URL for linkback at top
 
 var url = window.location.href;
-$('#linkback').html(`<a href="${url}">Return to Start</a>`);
+$('#linkback').html(`<a href="${url}">Volver al inicio</a>`);
 
 $('#linkback').click(e => {
-  if (!(confirm("Are you sure you want to restart? You'll lose any progress.")))
+  if (!(confirm("¿Estás seguro de que quieres reiniciar? Perderás tu progreso.")))
     e.preventDefault();
   else clear();
 });
@@ -151,7 +151,7 @@ function displayResults(testMsgs) {
      func();
    });
    successMsg.className = '';
-   successMsg.innerText = "Well done! Click the Next Challenge button to continue.";
+   successMsg.innerText = "¡Bien hecho! Haz click en el botón Próximo reto para continuar.";
    nextChallenge.className = 'btn';
  } else {
    failMsg.className = '';
