@@ -194,7 +194,7 @@ this.className += k.toLowerCase().trim();
     name: "#5 Introduciendo bordes",
     instructions: [
       "Ahora que se mueven, deberíamos asegurarnos de que no huyan! Intenta cambiar el <span class='inline-code'>style</span>, <span class='inline-code'>size</span>, y <span class='inline-code'>color</span> del borde hasta que encuentres alguno que te guste. Los estilos son:",
-      "<img src='http://www.vanseodesign.com/blog/wp-content/uploads/2011/10/border-styles.png' style='height: 250px;'>",
+      "<img src='/external/border-styles.png' style='height: 250px;'>",
       "PISTA: <span class='inline-code'>px</span> viene de <span class='inline-code'>pixels</span> una medida de ancho."
     ],
     seed: {
